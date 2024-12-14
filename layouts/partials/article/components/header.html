@@ -23,6 +23,7 @@
                         width="{{ $Width }}" 
                         height="{{ $Height }}" 
                         loading="lazy"
+                        {{ with .Params.imagePosition }}style="object-position: 0% {{ . }};"{{ end }}
                         alt="Featured image of post {{ .Title }}" />
                 {{ else }}
                     <img src="{{ $image.permalink }}" loading="lazy" alt="Featured image of post {{ .Title }}" />

@@ -5,6 +5,25 @@
     {{ $pag := .Paginate ($filtered) }}
 
     <section class="article-list">
+        <article class="">
+            <header class="article-header">
+                <div class="article-details">
+                    <div class="article-title-wrapper">
+                        <h3 class="article-subtitle">Subscribe right here to receive my posts by mail. I won't spam. Pinky promise. 🤞</h3>
+                        <form method="post" action="https://newsletter.jan-berndt.de/subscription/form" class="listmonk-form">
+                            <input type="hidden" name="nonce" />
+                            <input type="email" name="email" required placeholder="E-mail" />
+                            <input type="text" name="name" placeholder="Name (optional)" />
+                            <p hidden>
+                                <input id="45af1" type="checkbox" name="l" checked value="45af13f2-a2d3-4811-aa19-1ab0c46ecff8" />
+                                <label for="45af1">Jan's Newsletter</label>
+                            </p>
+                            <input type="submit" value="Subscribe " />
+                        </form>
+                    </div>
+                </div>
+            </header>
+        </article>
         {{ range $index, $element := $pag.Pages }}
             {{ partial "article-list/default" . }}
         {{ end }}

@@ -1,1 +1,44 @@
 /* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    input[type="email"],
+    input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid var(--card-separator-color);
+        border-radius: var(--tag-border-radius);
+        font-size: 1.6rem;
+        color: var(--card-text-color-main);
+        background-color: var(--card-background);
+        transition: border-color 0.3s ease;
+
+        &:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+    }
+
+    input[type="submit"] {
+        background-color: var(--accent-color);
+        color: var(--accent-color-text);
+        padding: 10px 20px;
+        border: none;
+        border-radius: var(--tag-border-radius);
+        font-size: 1.6rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: var(--accent-color-darker);
+        }
+    }
+}

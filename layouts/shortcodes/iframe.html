@@ -1,0 +1,21 @@
+{{- $src := .Get "src" -}}
+{{- $desktopOnly := .Get "desktop-only" -}}
+{{- $height := .Get "height" -}}
+{{- if $desktopOnly -}}
+<div class="desktop-only">
+{{- end -}}
+<iframe 
+  src="{{ $src }}" 
+  width="100%" 
+  frameborder="0" 
+  {{- if $height -}} height="{{ $height }}" {{- end -}} 
+  allowfullscreen
+></iframe>
+{{- if $desktopOnly -}}
+</div>
+<style>
+@media (max-width: 768px) {
+  .desktop-only { display: none; }
+}
+</style>
+{{- end -}}
